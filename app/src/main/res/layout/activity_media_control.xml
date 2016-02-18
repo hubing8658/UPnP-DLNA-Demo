@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black" >
+
+    <LinearLayout
+        android:id="@+id/miniplayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+        
+        <ImageButton
+            android:id="@+id/ib_stop"
+            android:layout_width="40.0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/icon_stop" >
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_playpre"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/selector_btn_pre" >
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_play"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_btn_play" >
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_btn_pause"
+            android:visibility="gone" >
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/ib_playnext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_btn_next" >
+        </ImageButton>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_duration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/miniplayLayout" >
+
+        <TextView
+            android:id="@+id/tv_totalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/init_time"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_totalTime"
+            android:text="@string/separate"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_curTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_line"
+            android:text="@string/init_time"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" >
+        </TextView>
+
+        <SeekBar
+            android:id="@+id/sb_playback"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/tv_curTime"
+            android:max="100"
+            android:maxHeight="55.0dip"
+            android:minHeight="55.0dip"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+            android:thumbOffset="15dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_duration"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_mute"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10.0dp"
+            android:contentDescription="@null"
+            android:background="@drawable/selector_volume" />
+        
+        <TextView
+            android:id="@+id/tv_curr_vol"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10.0dp"
+            android:text="@string/current_volume"
+            android:textColor="#ffffffff" />
+
+        <Button
+            android:id="@+id/btn_add_vol"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10.0dp"
+            android:gravity="center"
+            android:text="@string/add"
+            android:textColor="#ffffffff" />
+
+        <Button
+            android:id="@+id/btn_sub_vol"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10.0dp"
+            android:gravity="center"
+            android:text="@string/subtract"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UpnpTestDemo</string>
+    <string name="search">查找设备</string>
+    <string name="network_switch">打开/关闭路由</string>
+    <string name="log_switch">打开/关闭Debug模式</string>
+
+    <string name="searching_LAN">查找局域网中的Upnp设备…</string>
+    <string name="enabling_router">开启路由…</string>
+    <string name="disabling_router">关闭路由…</string>
+    <string name="error_switching_router">Error switching router: </string>
+    <string name="enabling_debug_logging">开启调试log…</string>
+    <string name="disabling_debug_logging">关闭调试log…</string>
+    <string name="device_not_available">正在查找设备详情,请稍后.</string>
+    
+    <string name="device_details">Device Details</string>
+    <string name="OK">确定</string>
+    
+    <string name="select_render">请选择播放设备</string>
+    <string name="select_show_device">请选择展示图片的设备</string>
+    <string name="separate"> / </string>
+    <string name="init_time">0:00:00</string>
+    <string name="add"> + </string>
+    <string name="subtract"> - </string>
+    <string name="current_volume">当前音量：</string>
+    
+    <string name="download">下载</string>
+    <string name="file_exists">该文件已下载</string>
+    <string name="download_started">开始下载：</string>
+    <string name="download_ongoing">正在下载：</string>
+    <string name="download_finished">下载完成</string>
+    <string name="download_failed">下载失败</string>
+    <string name="file_downloading">当前文件正在下载中</string>
+    
+</resources>

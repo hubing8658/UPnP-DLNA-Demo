@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/search"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/search"/>
+    <!--  <item
+        android:id="@+id/network_switch"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/network_switch"/>-->
+    <item
+        android:id="@+id/log_switch"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/log_switch"/>
+
+</menu>
