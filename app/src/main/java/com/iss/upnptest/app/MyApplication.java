@@ -1,11 +1,13 @@
 package com.iss.upnptest.app;
 
+import android.app.Application;
+
+import com.iss.upnptest.moduls.searchdevice.entity.DeviceDisplay;
+import com.iss.upnptest.upnp.UpnpServiceBiz;
+
 import org.fourthline.cling.android.FixedAndroidLogHandler;
 import org.fourthline.cling.support.model.item.Item;
 import org.seamless.util.logging.LoggingUtil;
-import android.app.Application;
-import com.iss.upnptest.moduls.searchdevice.entity.DeviceDisplay;
-import com.iss.upnptest.upnp.UpnpServiceBiz;
 
 /**
  * @author hubing
@@ -18,7 +20,7 @@ public class MyApplication extends Application {
 	private Item item;
 	private static MyApplication mApp;
 	
-	private static Object lock = new Object();
+	private static final Object LOCK = new Object();
 
 	@Override
 	public void onCreate() {
@@ -32,7 +34,7 @@ public class MyApplication extends Application {
 	}
 
 	public static MyApplication getInstance() {
-		synchronized (lock) {
+		synchronized (LOCK) {
 			return mApp;
 		}
 	}
@@ -56,6 +58,7 @@ public class MyApplication extends Application {
 	@Override
 	public void onTerminate() {
 		UpnpServiceBiz.newInstance().closeUpnpService(this);
+		super.onTerminate();
 	}
 	
 }

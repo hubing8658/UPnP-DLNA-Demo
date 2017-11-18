@@ -1,3 +1,4 @@
+
 package com.iss.upnptest.moduls.searchdevice.ui;
 
 import android.app.AlertDialog;
@@ -42,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    protected GeneralAdapter<DeviceDisplay> adapter;
-    protected Handler handler;
+    private GeneralAdapter<DeviceDisplay> adapter;
+
+    protected static Handler handler;
+
     private ListView lvDevices;
+
     private TestRegistryListener rListener;
+
     private UpnpServiceBiz upnpServiceBiz;
 
     @Override
@@ -120,14 +125,12 @@ public class MainActivity extends AppCompatActivity {
         lvDevices.setOnItemClickListener(new OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DeviceDisplay dd = adapter.getItem(position);
                 ((MyApplication) getApplication()).setDeviceDisplay(dd);
                 Intent intent = null;
                 if (dd.getDevice().isFullyHydrated()) {
-                    intent = new Intent(MainActivity.this,
-                            BrowserContentActivity.class);
+                    intent = new Intent(MainActivity.this, BrowserContentActivity.class);
                 } else {
                     showDeviceDetails(dd);
                 }
@@ -138,8 +141,7 @@ public class MainActivity extends AppCompatActivity {
         });
         lvDevices.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                           int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 DeviceDisplay deviceDisplay = adapter.getItem(position);
                 return showDeviceDetails(deviceDisplay);
             }
@@ -158,11 +160,10 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = new AlertDialog.Builder(this).create();
         dialog.setTitle(R.string.device_details);
         dialog.setMessage(deviceDisplay.getDetailsMsg());
-        dialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.OK),
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
+        dialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.OK), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
         dialog.show();
         TextView textView = (TextView) dialog.findViewById(android.R.id.message);
         textView.setTextSize(12);

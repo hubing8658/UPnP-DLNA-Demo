@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    buildToolsVersion '25.0.3'
 
     defaultConfig {
         applicationId "com.iss.upnptest"
@@ -29,5 +29,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:22.1.1'
-    compile files('libs/Cling-2.0.1.jar')
+    compile files('libs/Cling-2.1.1.jar')
 }
